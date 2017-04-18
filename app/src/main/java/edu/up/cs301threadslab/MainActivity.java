@@ -17,6 +17,7 @@ public class MainActivity extends Activity
         implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
 
     private AnimationView myAV;
+    private StarBlinkAnimation myAnimatedStars;
     private Button theButton;
     private SeekBar theSeekBar;
 
@@ -37,18 +38,9 @@ public class MainActivity extends Activity
         theSeekBar = (SeekBar) findViewById(R.id.seekBar);
         theSeekBar.setOnSeekBarChangeListener(this);
 
-        StarBlinker animate = new StarBlinker();
-        animate.start();
-/*
-        while (true) {
-            myAV.postInvalidate();
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e){
-                e.printStackTrace();
-            }
-        }
-        */
+        // Checkpoint 3
+        myAnimatedStars = new StarBlinkAnimation(myAV);
+        myAnimatedStars.start();
     }//onClick
 
     @Override
