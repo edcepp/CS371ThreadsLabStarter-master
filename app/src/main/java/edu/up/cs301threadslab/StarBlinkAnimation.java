@@ -16,7 +16,7 @@ public class StarBlinkAnimation extends Thread {
     public void run() {
         while (true) {
             try {
-                Thread.sleep(50);
+                Thread.sleep(1);  //checkpoint 6 change from 50 to 1
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

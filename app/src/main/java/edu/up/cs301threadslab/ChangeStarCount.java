@@ -22,7 +22,7 @@ public class ChangeStarCount extends Thread {
             else myStarAnimate.removeStar();
 
             try {
-                Thread.sleep(40);
+                Thread.sleep(2); // checkpoint 6 stress test change from 40 to 2
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

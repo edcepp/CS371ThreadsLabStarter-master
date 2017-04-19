@@ -68,15 +68,17 @@ public class StarAnimation extends Animation {
     /** draws the next frame of the animation */
     @Override
     public void draw(Canvas canvas) {
-        for (Star s : field) {
-            s.draw(canvas);
-            if (this.twinkle) {
-                s.twinkle();
+        synchronized (field) {    // checkpoint 6
+            for (Star s : field) {
+                s.draw(canvas);
+                if (this.twinkle) {
+                    s.twinkle();
+                }
             }
         }
 
-        this.twinkle = true;
-    }//draw
+            this.twinkle = true;
+        }//draw
 
     /** the seekbar progress specifies the brightnes of the stars. */
     @Override
