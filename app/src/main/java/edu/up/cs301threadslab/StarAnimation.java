@@ -21,9 +21,16 @@ public class StarAnimation extends Animation {
     /* when this is set to 'false' the next animation frame won't twinkle */
     private boolean twinkle = true;
 
+    ChangeStarCount myChangeCount;
+
     /** ctor expects to be told the size of the animation canvas */
     public StarAnimation(int initWidth, int initHeight) {
+
         super(initWidth, initHeight);
+
+        // Checkpoint 5
+        myChangeCount = new ChangeStarCount(this);
+        myChangeCount.start();
     }
 
     /** whenever the canvas size changes, generate new stars */

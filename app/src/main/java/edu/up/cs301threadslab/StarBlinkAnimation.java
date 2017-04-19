@@ -5,6 +5,7 @@ package edu.up.cs301threadslab;
  * Created by eepp on 4/18/17.
  */
 
+// Checkpoint 3
 public class StarBlinkAnimation extends Thread {
     private AnimationView myView = null;
 
