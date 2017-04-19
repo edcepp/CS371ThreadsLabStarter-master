@@ -74,8 +74,17 @@ public class StarAnimation extends Animation {
     /** the seekbar progress specifies the brightnes of the stars. */
     @Override
     public void progressChange(int newProgress) {
-        int brightness = 255 - (newProgress * 2);
-        Star.starPaint.setColor(Color.rgb(brightness, brightness, brightness));
-        this.twinkle = false;
+        //int brightness = 255 - (newProgress * 2);
+        //Star.starPaint.setColor(Color.rgb(brightness, brightness, brightness));
+        //this.twinkle = false;
+        // Checkpoint 4
+        int targetStars = (newProgress * 9) + 100;
+        int currentStars = field.size();
+        if (targetStars > currentStars) {
+            for (int count = currentStars; count < targetStars; count++) addStar();
+        }
+        else {
+            for (int count = currentStars; count > targetStars; count--) removeStar();
+        }
     }
 }//class StarAnimation
